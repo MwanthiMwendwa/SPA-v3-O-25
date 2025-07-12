@@ -9,4 +9,13 @@ app.get("/*", (req, res) => {
     res.sendFile(path.resolve(__dirname, "frontend", "index.html"));
 });
 
-app.listen(process.env.PORT || 8080, () => console.log(`Server running...7000`));
+
+app.get('/api/profile', (req, res) => {
+    res.status(200).json({
+        "name": "Mwendwa Mwanthi",
+        "Position": "Founder",
+        "contact": "0720-211-391"
+    })
+})
+
+app.listen(process.env.PORT || 7070, () => console.log(`Server running...7070`));
